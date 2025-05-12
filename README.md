@@ -1,70 +1,182 @@
-# Getting Started with Create React App
+# ACL Rehabilitation App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based application for ACL rehabilitation with separate interfaces for patients and doctors.
 
-## Available Scripts
+## 🎯 Features
 
-In the project directory, you can run:
+- **Patient Dashboard**: Track exercise progress, receive AI-powered feedback, and view doctor's notes
+- **Doctor Dashboard**: Manage multiple patients, add medical notes, and monitor rehabilitation progress
+- **Real-time Data Visualization**: Charts showing knee motion data (flexion angle, rotation, acceleration)
+- **Pain Level Integration**: AI adjusts exercise recommendations based on reported pain levels
+- **Multi-stage Rehabilitation**: Support for early, intermediate, and advanced recovery stages
 
-### `npm start`
+## 🚀 Quick Start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Before you begin, ensure you have the following installed:
+- **Node.js** (version 14.0 or higher)
+- **npm** (comes with Node.js)
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Clone or download the project**
+   ```bash
+   git clone <your-repository-url>
+   cd acl-rehabilitation-app
+   ```
 
-### `npm run build`
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Install additional required packages**
+   ```bash
+   npm install recharts lucide-react
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Running the Application
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Start the development server**
+   ```bash
+   npm start
+   ```
 
-### `npm run eject`
+2. **Open your browser**
+   - Navigate to [http://localhost:3000](http://localhost:3000)
+   - The app will automatically reload when you make changes
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📋 Demo Credentials
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Patient Login
+- **Username**: `john_doe`
+- **Password**: `patient123`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Alternative patients:
+- `jane_smith` / `patient456`
+- `bob_johnson` / `patient789`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Doctor Login
+- **Username**: `dr_smith`
+- **Password**: `doctor123`
 
-## Learn More
+Alternative doctor:
+- `dr_jones` / `doctor456`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📁 Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+src/
+├── App.js                    # Main application component
+├── ACLRehabilitationApp.js   # Patient dashboard
+├── DoctorPage.jsx           # Doctor dashboard
+├── SignInPage.jsx           # Login interface
+└── index.js                 # Application entry point
+```
 
-### Code Splitting
+## 🔧 Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Environment Setup
 
-### Analyzing the Bundle Size
+Create a `.env` file in the root directory (optional for future use):
+```env
+REACT_APP_API_URL=http://localhost:8000
+REACT_APP_WS_URL=ws://localhost:8000
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Tailwind CSS (Optional)
 
-### Making a Progressive Web App
+If you want to use Tailwind CSS for styling:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Install Tailwind CSS:
+   ```bash
+   npm install -D tailwindcss
+   npx tailwindcss init
+   ```
 
-### Advanced Configuration
+2. Update `tailwind.config.js`:
+   ```javascript
+   module.exports = {
+     content: [
+       "./src/**/*.{js,jsx,ts,tsx}",
+     ],
+     theme: {
+       extend: {},
+     },
+     plugins: [],
+   }
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. Add to your CSS file:
+   ```css
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   ```
 
-### Deployment
+## 🛠️ Development
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Available Scripts
 
-### `npm run build` fails to minify
+- `npm start`: Run the app in development mode
+- `npm test`: Launch the test runner
+- `npm run build`: Build the app for production
+- `npm run eject`: Eject from Create React App (⚠️ irreversible)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Adding New Features
+
+1. **Adding New Patient Data**:
+   - Update the mock data in `ACLRehabilitationApp.js`
+   - Modify the sensor data simulation in the `useEffect` hook
+
+2. **Adding New Doctor Functionality**:
+   - Extend the `DoctorPage.jsx` component
+   - Add new state management for additional features
+
+## 🚨 Troubleshooting
+
+### Common Issues
+
+1. **"Module not found" errors**:
+   - Run `npm install` to ensure all dependencies are installed
+   - Check if all import paths are correct
+
+2. **Styles not loading**:
+   - Make sure Tailwind CSS is properly configured
+   - Verify that CSS files are imported correctly
+
+3. **Charts not rendering**:
+   - Ensure `recharts` is installed: `npm install recharts`
+   - Check browser console for any JavaScript errors
+
+4. **Icons not displaying**:
+   - Verify `lucide-react` is installed: `npm install lucide-react`
+
+### Debugging Steps
+
+1. **Check the browser console** (F12) for error messages
+2. **Verify all files are in the correct locations**
+3. **Ensure all dependencies are installed**
+4. **Try restarting the development server**
+
+## 🌟 Future Enhancements
+
+- [ ] Backend API integration
+- [ ] Real WebSocket connections
+- [ ] User authentication with JWT
+- [ ] Data persistence with database
+- [ ] Real sensor data integration
+- [ ] Video exercise demonstrations
+- [ ] Progress reports and analytics
+
+## 📞 Support
+
+If you encounter any issues or have questions:
+1. Check the browser console for error messages
+2. Verify all steps in this README are followed
+3. Ensure all dependencies are properly installed
+
+## 📄 License
+
+This project is for demonstration purposes. Please ensure you have appropriate permissions for any medical applications.

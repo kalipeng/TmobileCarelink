@@ -2,7 +2,7 @@
 
 A React-based application for ACL rehabilitation with separate interfaces for patients and doctors.
 
-## 🎯 Features
+## Features
 
 - **Patient Dashboard**: Track exercise progress, receive AI-powered feedback, and view doctor's notes
 - **Doctor Dashboard**: Manage multiple patients, add medical notes, and monitor rehabilitation progress
@@ -10,7 +10,7 @@ A React-based application for ACL rehabilitation with separate interfaces for pa
 - **Pain Level Integration**: AI adjusts exercise recommendations based on reported pain levels
 - **Multi-stage Rehabilitation**: Support for early, intermediate, and advanced recovery stages
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -134,7 +134,7 @@ If you want to use Tailwind CSS for styling:
    - Extend the `DoctorPage.jsx` component
    - Add new state management for additional features
 
-## 🚨 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -160,7 +160,7 @@ If you want to use Tailwind CSS for styling:
 3. **Ensure all dependencies are installed**
 4. **Try restarting the development server**
 
-## 🌟 Future Enhancements
+## Future Enhancements
 
 - [ ] Backend API integration
 - [ ] Real WebSocket connections
